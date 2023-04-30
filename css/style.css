@@ -116,7 +116,7 @@ div.swiper-wrapper {
 .services__btn-hidden::before {
     content: "";
     display: inline-block;
-    background: url("/img/arrow.svg") no-repeat;
+    background: url("../img/arrow.svg") no-repeat;
     height: 11px;
     width: 8px;
     margin-right: 16px;

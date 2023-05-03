@@ -3,19 +3,20 @@ const btnHidden = document.querySelector('.services__btn-hidden');
 const swiperWrapper = document.querySelector('.swiper-wrapper');
 const arrowHidden = document.querySelector('.services__btn-hidden');
 
-btnHidden.addEventListener('click', () =>
-{
+btnHidden.addEventListener('click', () => {
     swiperWrapper.classList.toggle('active');
     arrowHidden.classList.toggle('active');
-    btnHidden.textContent = swiperWrapper.classList.contains('active')?'Скрыть':'Показать все';
+    btnHidden.textContent = swiperWrapper.classList.contains('active') ? 'Скрыть' : 'Показать все';
 });
 
 //Swiper/////////////////////////////////////////////////////////
 const slider = document.querySelector('.swiper');
-let swiper;
+const mediaQuery = '(max-width: 768px)';
+const matchQuery = window.matchMedia(mediaQuery);
+let  swiper;
 
-function mobileSlider() {
-    if (window.innerWidth < 768 && slider.dataset.mobile === 'false') {
+window.addEventListener('load', function () {
+    if (matchQuery.matches) {
         swiper = new Swiper(slider, {
             slidesPerView: 'auto',
             spaceBetween: 16,
@@ -23,17 +24,25 @@ function mobileSlider() {
                 el: '.swiper-pagination',
             }
         });
-        slider.dataset.mobile = 'true';
+    } else {
+       swiper.destroy();
     }
-    if (window.innerWidth >= 768) {
-        slider.dataset.mobile = 'false';
-        swiper.destroy();
-    }
-}
+});
 
-window.addEventListener('load', () => {
-    mobileSlider();
+matchQuery.addEventListener('change', function () {
+    if (matchQuery.matches) {
+        swiper = new Swiper(slider, {
+            slidesPerView: 'auto',
+            spaceBetween: 16,
+            pagination: {
+                el: '.swiper-pagination',
+            }
+        });
+    } else {
+       swiper.destroy();
+    }
 });
-window.addEventListener('resize', () => {
-    mobileSlider();
-});
+
+
+
+

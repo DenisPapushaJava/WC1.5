@@ -49,7 +49,7 @@ body {
     text-transform: uppercase;
 }
 
-div.swiper-slide {
+.swiper-slide {
     width: 240px;
 }
 
@@ -84,20 +84,21 @@ div.swiper-slide {
     border-radius: 50%;
 }
 
-span.swiper-pagination-bullet {
+.swiper-pagination-bullet {
     background-color: #DDDDDD;
     width: 12px;
     height: 12px;
 }
 
-div.swiper-pagination {
+.swiper-pagination {
     position: static;
     margin-top: 16px;
 }
 
-div.swiper-wrapper {
+.swiper-wrapper {
 
     padding-left: 16px;
+
 
 }
 
@@ -130,19 +131,18 @@ div.swiper-wrapper {
 
 @media (min-width: 768px) {
 
-    div.swiper-wrapper {
+    .swiper-wrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
+        justify-items: start;
         gap: 16px 0;
         height: 160px;
         overflow: hidden;
-        transition: 0.5s ease-in-out;
+
     }
 
-    div.swiper-wrapper.active {
+    .swiper-wrapper.active {
         height: auto;
-        transition: 0.5s ease-in-out;
     }
 
     .swiper-pagination {
@@ -154,13 +154,13 @@ div.swiper-wrapper {
         margin-bottom: 24px;
     }
 
-    div.swiper-slide {
+    .swiper-slide {
         height: 72px;
 
     }
 
     .services__item {
-        width: 224px;
+        min-width: 224px;
 
     }
 
@@ -174,7 +174,7 @@ div.swiper-wrapper {
 
 @media (min-width: 1120px) {
 
-    div.swiper-wrapper {
+    .swiper-wrapper {
         grid-template-columns: repeat(4, 1fr);
         gap: 16px 0;
     }

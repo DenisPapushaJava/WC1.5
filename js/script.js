@@ -13,7 +13,7 @@ btnHidden.addEventListener('click', () => {
 const slider = document.querySelector('.swiper');
 const mediaQuery = '(max-width: 768px)';
 const matchQuery = window.matchMedia(mediaQuery);
-let  swiper;
+let swiper;
 
 window.addEventListener('load', function () {
     if (matchQuery.matches) {
@@ -25,7 +25,7 @@ window.addEventListener('load', function () {
             }
         });
     } else {
-       swiper.destroy();
+        swiper.destroy();
     }
 });
 
@@ -39,7 +39,7 @@ matchQuery.addEventListener('change', function () {
             }
         });
     } else {
-       swiper.destroy();
+        swiper.destroy();
     }
 });
 

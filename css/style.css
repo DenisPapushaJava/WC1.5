@@ -95,11 +95,21 @@ body {
     margin-top: 16px;
 }
 
+.services__container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 72px;
+    width: 24px;
+    background: linear-gradient(270deg, #F8F8F8 16.84%,
+    rgba(248, 248, 248, 0.0001) 100%);
+    z-index: 1;
+
+}
+
 .swiper-wrapper {
-
     padding-left: 16px;
-
-
 }
 
 .services__btn-hidden {
@@ -145,7 +155,8 @@ body {
         height: auto;
     }
 
-    .swiper-pagination {
+    .swiper-pagination,
+    .services__container::after {
         display: none;
     }
 

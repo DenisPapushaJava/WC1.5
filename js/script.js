@@ -15,8 +15,8 @@ const mediaQuery = '(max-width: 768px)';
 const matchQuery = window.matchMedia(mediaQuery);
 let swiper;
 
-window.addEventListener('load', function () {
-    if (matchQuery.matches) {
+const createSwiper = function (match){
+    if (match.matches) {
         swiper = new Swiper(slider, {
             slidesPerView: 'auto',
             spaceBetween: 16,
@@ -27,20 +27,14 @@ window.addEventListener('load', function () {
     } else {
         swiper.destroy();
     }
+}
+
+window.addEventListener('load', function () {
+   createSwiper(matchQuery);
 });
 
 matchQuery.addEventListener('change', function () {
-    if (matchQuery.matches) {
-        swiper = new Swiper(slider, {
-            slidesPerView: 'auto',
-            spaceBetween: 16,
-            pagination: {
-                el: '.swiper-pagination',
-            }
-        });
-    } else {
-        swiper.destroy();
-    }
+  createSwiper(matchQuery)
 });
 
 
